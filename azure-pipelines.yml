@@ -40,7 +40,7 @@ stages:
     - task: Docker@2
       displayName: Push image to Docker Hub
       inputs:
-        containerRegistry: 'will050c-DockerHub'
+        containerRegistry: 'will050cDockerHub'
         repository: $(DES_IMAGE_NAME)
         command: 'push'
         tags: '$(TAG)'
