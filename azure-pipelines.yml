@@ -57,7 +57,7 @@ stages:
       displayName: Deploy new container version
       inputs:
         azureSubscription: 'SP-Laboratorio'
-        imageToDeploy: '$(DES_IMAGE_NAME):$(TAG)'
+        imageToDeploy: '$(IMAGE_NAME):$(TAG)'
         containerAppName: '$(CONTAINERAPPS_APP)'
         resourceGroup: '$(RESOURCE_GROUP)'
         containerAppEnvironment: '$(CONTAINERAPPS_ENVIRONMENT)'
