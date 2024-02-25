@@ -35,7 +35,7 @@ stages:
         containerRegistry: 'will050cDockerHub'
         command: build
         dockerfile: '$(Build.SourcesDirectory)/backend_api/backend_api_csharp/Dockerfile'
-        repository: $(SRC_IMAGE_NAME)
+        repository: $(DES_IMAGE_NAME)
         tags: $(TAG)
 
     - task: Docker@2
