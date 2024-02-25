@@ -32,6 +32,7 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
+        containerRegistry: 'will050cDockerHub'
         command: build
         dockerfile: '$(Build.SourcesDirectory)/backend_api/backend_api_csharp/Dockerfile'
         repository: $(SRC_IMAGE_NAME)
