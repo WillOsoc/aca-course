@@ -12,8 +12,7 @@ resources:
 - repo: self
 
 variables:
-  SRC_IMAGE_NAME: houssemdocker/album-backend-api
-  DES_IMAGE_NAME: will050c/album-backend-api
+  IMAGE_NAME: will050c/album-backend-api
   CONTAINERAPPS_APP: album-backend-api
   CONTAINERAPPS_ENVIRONMENT: aca-environment
   RESOURCE_GROUP: az-eus-woc-devops-lab-RG
@@ -32,17 +31,16 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
-        containerRegistry: 'will050cDockerHub'
         command: build
         dockerfile: '$(Build.SourcesDirectory)/backend_api/backend_api_csharp/Dockerfile'
-        repository: $(DES_IMAGE_NAME)
+        repository: $(IMAGE_NAME)
         tags: $(TAG)
 
     - task: Docker@2
       displayName: Push image to Docker Hub
       inputs:
         containerRegistry: 'will050cDockerHub'
-        repository: $(DES_IMAGE_NAME)
+        repository: $(IMAGE_NAME)
         command: 'push'
         tags: '$(TAG)'
 
